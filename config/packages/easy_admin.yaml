@@ -1,0 +1,20 @@
+easy_admin:
+  site_name: '<img src="https://symfony.com/logos/symfony_white_01.png"/>'
+  entities:
+    Customer:
+      class: App\Entity\Customer
+    Order:
+      class: App\Entity\Order
+    Product:
+      class: App\Entity\Product
+
+  user:
+    display_name: true
+    display_avatar: false
+    # this method/property must return the string representation of the user
+    # (Symfony will look for getFullName(), isFullName(), ..., and 'fullName' property)
+    name_property_path: 'fullName'
+
+    # this method/property must return the absolute URL of the user avatar image
+    # (Symfony will look for getGravatar(), isGravatar(), ..., and 'gravatar' property)
+    avatar_property_path: 'gravatar'

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <header>
+        {% include "registration/header.html.twig" %}
+    </header>
+    <h1>Register</h1>
+    <div id="wrapper">
+
+        {{ form_start(registrationForm, {'attr': {'id': 'register'}}) }}
+            {{ form_row(registrationForm.email, {
+                label: false,
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: false
+            }) }}
+
+            <input type="hidden" name="_target_path" value="/"/>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <button type="submit" class="btn">&#xf0da;</button>
+            <p>{{ form_row(registrationForm.agreeTerms) }}</p>
+
+        {{ form_end(registrationForm) }}
+
+    </div>
+
+    <script type="text/javascript" src="{{ asset('/bundles/register/main.js') }}"></script>
+
+{% endblock %}

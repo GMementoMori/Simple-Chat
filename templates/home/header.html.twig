@@ -1,0 +1,8 @@
+{% block header %}
+    <link href="{{ asset('/bundles/home/home.css') }}" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <a class="logout" href="{{ path('app_logout') }}">Logout</a>
+    <a class="current-user">{{ current_user }}</a>
+    <a href="{{ path('chat') }}" class="current-user">Chat</a>
+    <p id="error-message"><p>
+{% endblock %}

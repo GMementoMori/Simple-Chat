@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header>
+        {% include "login/header.html.twig" %}
+    </header>
+
+    <h1>Sign In Form</h1>
+    <div id="wrapper">
+        <form id="signin" action="{{ path('login') }}" method="post">
+            <input type="text" id="username" name="_username" autocomplete="off" value="{{ last_username }}" placeholder="Email"/>
+            <input type="password" id="password" name="_password" autocomplete="off" placeholder="Password"/>
+
+            <input type="hidden" name="_target_path" value="/"/>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button type="submit">&#xf0da;</button>
+            <p>forgot your password? <a href="#">click here</a></p>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="{{ asset('/bundles/login/main.js') }}"></script>
+
+{% endblock %}

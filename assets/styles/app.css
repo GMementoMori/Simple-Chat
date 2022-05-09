@@ -1,0 +1,36 @@
+/*body {*/
+/*    background-color: lightgray;*/
+/*}*/
+
+*{
+    font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+body{
+    background: rgb(52, 56, 61);
+}
+.logout {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    /*font-family: cursive;*/
+    /*color: #1c1917;*/
+    text-decoration: none;
+    color: white;
+}
+.register {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    /*font-family: cursive;*/
+    /*color: #1c1917;*/
+    text-decoration: none;
+    color: white;
+}
+.current-user {
+    font-size: 18px;
+    font-weight: bold;
+    /*font-family: cursive;*/
+    /*color: #1c1917;*/
+    margin-left: 10px;
+    color: white;
+}

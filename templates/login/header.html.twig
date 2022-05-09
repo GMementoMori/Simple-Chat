@@ -1,0 +1,7 @@
+{% block header %}
+    <link href="{{ asset('/bundles/login/login.css') }}" rel="stylesheet"/>
+    <a class="register" href="{{ path('app_register') }}">Registration</a>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    <header>
+        {% include "chat/header.html.twig" %}
+    </header>
+    <main>
+        <div class="wrapper wrapper-users">
+            {% if users_messages is not empty %}
+                {% for email, total_messages in users_messages %}
+                    {% if email != current_user %}
+                        <div class="user-container">
+                            <input class="user-email" type="submit" value="{{ email }}">
+                            <span class="unread" data-unread="{{ email }}">{{ total_messages }}</span>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div id="wrapper-message" class="wrapper wrapper-message">
+            <div id="chat">
+                {% if massages is not empty %}
+                    {% for message in massages %}
+                        {% if message.emailSender == current_user %}
+                            <p class="message message-current-user"> <span> Вы : </span> {{ message.message }}</p>
+                        {% else %}
+                            <p class="message"> <span>{{ message.emailSender }} : </span> {{ message.message }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="inputs">
+                <input id="message-input" type="text">
+                <input id="user-input" type="hidden" value="{{ current_user }}">
+                <input id="btn-submit" type="button" data-recipient="{{ email_recipient }}" value="Send">
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="{{ asset('/bundles/chat/main.js') }}"></script>
+
+{% endblock %}

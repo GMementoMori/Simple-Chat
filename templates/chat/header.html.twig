@@ -1,0 +1,6 @@
+{% block header %}
+    <link href="{{ asset('/bundles/chat/chat.css') }}" rel="stylesheet"/>
+    <a class="logout" href="{{ path('app_logout') }}">Logout</a>
+    <a href="{{ path('home') }}" class="current-user">{{ current_user }}</a>
+    <p id="error-message"><p>
+{% endblock %}
